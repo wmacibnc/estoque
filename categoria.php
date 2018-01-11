@@ -42,7 +42,6 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
                   <?php
                   $query = "SELECT ID, NOME FROM CATEGORIA ORDER BY NOME ";
 
