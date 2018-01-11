@@ -46,7 +46,7 @@
               </thead>
               <tbody>
                 <?php
-                ECHO $query = "SELECT PROD.ID, 
+                $query = "SELECT PROD.ID, 
                 case 
                 when PROD.ID_CATEGORIA > 0 then 
                 (SELECT C.NOME FROM CATEGORIA C WHERE C.ID = ID_CATEGORIA)
