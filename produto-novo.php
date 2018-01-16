@@ -191,6 +191,7 @@
       document.getElementById("pv").style.display = "block";
       document.getElementById("pe").style.display = "block";
       document.getElementById("al").style.display = "block"; 
+      document.getElementById("quant").style.display = "none"; 
     }
 
     if(document.getElementById("tipo").value === '2'){
@@ -200,6 +201,7 @@
       document.getElementById("pv").style.display = "none";
       document.getElementById("pe").style.display = "none";
       document.getElementById("al").style.display = "none";
+      document.getElementById("quant").style.display = "block"; 
     }
 }
   </script>

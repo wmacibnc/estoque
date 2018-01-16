@@ -34,11 +34,12 @@
               <thead>
                 <tr>
                   <th>*</th>
-                  <th>Tipo</th>
+                  <th>Categoria</th>
                   <th>Nome</th>
                   <th>Qtd</th>
                   <th>Preço Custo</th>
                   <th>Preço Venda</th>
+                  <th>Fotos</th>
                   <th>Peso</th>
                   <th>Altura</th>
                   <th>Ação</th>
@@ -46,13 +47,32 @@
               </thead>
               <tbody>
                 <?php
-                $query = "SELECT PROD.ID, 
+                $query = "
+                SELECT 
+                PROD.ID, 
+                
                 case 
-                when PROD.ID_CATEGORIA > 0 then 
-                (SELECT C.NOME FROM CATEGORIA C WHERE C.ID = ID_CATEGORIA)
-                else (SELECT P.NOME FROM PRODUTO P WHERE P.ID = PROD.ID_PRODUTO)
-                  END AS NOME_TIPO,
-                PROD.NOME,PROD.QUANTIDADE, PROD.ID_PRODUTO, PROD.PRECO_CUSTO, PROD.ID_CATEGORIA, PROD.PRECO_VENDA, PROD.PESO, PROD.ALTURA FROM PRODUTO PROD ORDER BY NOME asc ";
+                  when PROD.ID_CATEGORIA > 0 
+                    then 
+                      (SELECT C.NOME FROM CATEGORIA C WHERE C.ID = ID_CATEGORIA) 
+                    else 
+                      (SELECT (SELECT C.NOME FROM CATEGORIA C WHERE C.ID = P.ID_CATEGORIA) FROM PRODUTO P WHERE P.ID = PROD.ID_PRODUTO) end as CATEGORIA,
+                case 
+                  when PROD.ID_CATEGORIA > 0 
+                    then 
+                      (PROD.NOME) 
+                    else 
+                      CONCAT((SELECT P.NOME FROM PRODUTO P WHERE P.ID = PROD.ID_PRODUTO), ' - ', PROD.NOME) END AS NOME_P, 
+                case 
+                  when (SELECT COUNT(I.ID) > 0 FROM IMAGEM I WHERE I.ID_PRODUTO = PROD.ID) 
+                    then 
+                      (SELECT COUNT(I.ID) FROM IMAGEM I WHERE I.ID_PRODUTO = PROD.ID) 
+                    else 
+                      (0) end as FOTOS,
+        
+              PROD.QUANTIDADE, PROD.ID_PRODUTO, PROD.PRECO_CUSTO, PROD.ID_CATEGORIA, PROD.PRECO_VENDA, 
+
+              PROD.PESO, PROD.ALTURA FROM PRODUTO PROD ORDER BY NOME asc";
 
                 $result = $con->query($query);
                 while($produto = $result->fetch_array(MYSQLI_ASSOC)){
@@ -61,10 +81,10 @@
                   echo $produto['ID'];
                   echo '</td>';
                   echo '<td>';
-                  echo $produto['NOME_TIPO'];
+                  echo $produto['CATEGORIA'];
                   echo '</td>';
                   echo '<td>';
-                  echo $produto['NOME'];
+                  echo $produto['NOME_P'];
                   echo '</td>';
                   echo '<td>';
                   echo $produto['QUANTIDADE'];
@@ -74,6 +94,9 @@
                   echo '</td>';
                   echo '<td>';
                   echo $produto['PRECO_VENDA'];
+                  echo '</td>';
+                  echo '<td>';
+                  echo $produto['FOTOS'];
                   echo '</td>';
                   echo '<td>';
                   echo $produto['PESO'];
