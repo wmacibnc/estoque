@@ -48,6 +48,9 @@
             <li>
               <a href="produto.php">Produtos</a>
             </li>
+            <li>
+              <a href="cliente.php">Clientes</a>
+            </li>
           </ul>
         </li>
 

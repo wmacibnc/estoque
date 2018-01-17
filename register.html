@@ -21,37 +21,84 @@
     <div class="card card-register mx-auto mt-5">
       <div class="card-header">Register an Account</div>
       <div class="card-body">
-        <form>
-          <div class="form-group">
-            <div class="form-row">
-              <div class="col-md-6">
-                <label for="exampleInputName">First name</label>
-                <input class="form-control" id="exampleInputName" type="text" aria-describedby="nameHelp" placeholder="Enter first name">
-              </div>
-              <div class="col-md-6">
-                <label for="exampleInputLastName">Last name</label>
-                <input class="form-control" id="exampleInputLastName" type="text" aria-describedby="nameHelp" placeholder="Enter last name">
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input class="form-control" id="exampleInputEmail1" type="email" aria-describedby="emailHelp" placeholder="Enter email">
-          </div>
-          <div class="form-group">
-            <div class="form-row">
-              <div class="col-md-6">
-                <label for="exampleInputPassword1">Password</label>
-                <input class="form-control" id="exampleInputPassword1" type="password" placeholder="Password">
-              </div>
-              <div class="col-md-6">
-                <label for="exampleConfirmPassword">Confirm password</label>
-                <input class="form-control" id="exampleConfirmPassword" type="password" placeholder="Confirm password">
-              </div>
-            </div>
-          </div>
-          <a class="btn btn-primary btn-block" href="login.html">Register</a>
-        </form>
+        <form class="form-horizontal">
+<fieldset>
+
+<!-- Text input-->
+<div class="form-group class-md-6">
+  <label class="control-label" for="nome">Nome</label>  
+  <div>
+  <input id="nome" name="nome" type="text" placeholder="Informe o nome" class="form-control input-md" required="">
+  <span class="help-block">Informe o nome do cliente</span>  
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group class-md-6">
+  <label class="control-label" for="email">E-mail</label>  
+  <div>
+  <input id="email" name="email" type="text" placeholder="Informe o e-mail" class="form-control input-md" required="">
+  <span class="help-block">Informe o e-mail do cliente</span>  
+  </div>
+</div>
+
+<!-- Password input-->
+<div class="form-group class-md-6">
+  <label class="control-label" for="senha">Senha</label>
+  <div>
+    <input id="senha" name="senha" type="password" placeholder="Informe a senha" class="form-control input-md" required="">
+    <span class="help-block">Informe a senha do cliente</span>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group class-md-6">
+  <label class="control-label" for="telefone">Telefone</label>  
+  <div>
+  <input id="telefone" name="telefone" type="text" placeholder="Informe o telefone" class="form-control input-md" required="">
+  <span class="help-block">Informe o Telefone do cliente</span>  
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group class-md-6">
+  <label class="control-label" for="cpf">C.P.F</label>  
+  <div>
+  <input id="cpf" name="cpf" type="text" placeholder="Informe o C.P.F" class="form-control input-md" required="">
+  <span class="help-block">Informe o C.P.F do cliente</span>  
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group class-md-6">
+  <label class="control-label" for="cep">CEP</label>  
+  <div>
+  <input id="cep" name="cep" type="text" placeholder="Informe o CEP" class="form-control input-md" required="">
+  <span class="help-block">Informe o CEP do cliente</span>  
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group class-md-6">
+  <label class="control-label" for="numero">Número</label>  
+  <div>
+  <input id="numero" name="numero" type="text" placeholder="Informe o número" class="form-control input-md" required="">
+  <span class="help-block">Informe o número do cliente</span>  
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group class-md-6">
+  <label class="control-label" for="complemento">Complemento</label>  
+  <div>
+  <input id="complemento" name="complemento" type="text" placeholder="informe o Complemento" class="form-control input-md" required="">
+  <span class="help-block">Informe o Complemento do endereço do cliente</span>  
+  </div>
+</div>
+
+</fieldset>
+</form>
+
         <div class="text-center">
           <a class="d-block small mt-3" href="login.html">Login Page</a>
           <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
