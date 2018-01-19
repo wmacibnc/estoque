@@ -17,6 +17,8 @@
   <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
+  <!-- Style personalizado da aplicação -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -46,10 +48,13 @@
               <a href="categoria.php">Categorias</a>
             </li>
             <li>
+              <a href="cliente.php">Clientes</a>
+            </li>
+            <li>
               <a href="produto.php">Produtos</a>
             </li>
             <li>
-              <a href="cliente.php">Clientes</a>
+              <a href="venda.php">Nova Venda</a>
             </li>
           </ul>
         </li>

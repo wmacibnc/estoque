@@ -29,6 +29,7 @@
                   <tr>
                     <th>Nome</th>
                     <th>Preço</th>
+                    <th>Qtd</th>
                     <th>Ação</th>
                   </tr>
                 </thead>
@@ -40,7 +41,8 @@
                   (SELECT C.NOME FROM CATEGORIA C WHERE C.ID = ID_CATEGORIA)
                   else (SELECT P.NOME FROM PRODUTO P WHERE P.ID = PROD.ID_PRODUTO)
                     END AS NOME_TIPO,
-                  PROD.NOME,PROD.QUANTIDADE, PROD.ID_PRODUTO, PROD.PRECO_CUSTO, PROD.ID_CATEGORIA, PROD.PRECO_VENDA, PROD.PESO, PROD.ALTURA FROM PRODUTO PROD WHERE PROD.ID_CATEGORIA > 0 ORDER BY NOME asc ";
+                  (SELECT SUM(P.QUANTIDADE) FROM PRODUTO P WHERE P.ID_PRODUTO = PROD.ID) as QUANTIDADE,
+                  PROD.NOME, PROD.ID_PRODUTO, PROD.PRECO_CUSTO, PROD.ID_CATEGORIA, PROD.PRECO_VENDA, PROD.PESO, PROD.ALTURA FROM PRODUTO PROD WHERE PROD.ID_CATEGORIA > 0 ORDER BY NOME asc ";
 
                   $result = $con->query($query);
                   while($produto = $result->fetch_array(MYSQLI_ASSOC)){
@@ -50,6 +52,9 @@
                     echo '</td>';
                     echo '<td>';
                     echo $produto['PRECO_VENDA'];
+                    echo '</td>';
+                    echo '<td>';
+                    echo $produto['QUANTIDADE'];
                     echo '</td>';
                     echo '<td>';
                     $id = $produto['ID'];

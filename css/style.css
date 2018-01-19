@@ -1,0 +1,15 @@
+.preco{
+	font-size: 38px;
+	color: #007bff;
+	font-weight: bold;
+}
+
+.titulo{
+	font-size: 48px;
+	font-weight: bold;
+}
+.input-qtd{
+	width: 60px;
+	display: inline;
+	margin: 0 5px 0 5px;
+}
