@@ -61,7 +61,7 @@
 					<div class="form-group class-md-6">
 						<label class="control-label" for="telefone">Telefone</label>  
 						<div>
-							<input id="telefone" name="telefone" maxlength="11" type="number" placeholder="Informe o telefone" class="form-control input-md" required <?php echo ' value="'.$cliente['DD'].$cliente['TELEFONE'].'"'; ?>>
+							<input id="telefone" name="telefone" maxlength="11" type="text" placeholder="Informe o telefone" class="form-control input-md" required <?php echo ' value="'.$cliente['DD'].$cliente['TELEFONE'].'"'; ?>>
 							<span class="help-block">Informe o Telefone do cliente</span>  
 						</div>
 					</div>
