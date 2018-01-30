@@ -149,6 +149,7 @@ class PagSeguroSender
      */
     public function setDocuments(array $documents)
     {
+        echo "tipo".$documents;
         if (count($documents) > 0) {
             foreach ($documents as $document) {
                 if ($document instanceof PagSeguroSenderDocument) {

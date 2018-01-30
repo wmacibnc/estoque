@@ -216,7 +216,7 @@ include 'config.php';
               <li class="nav-item">
                 <form class="form-inline my-2 my-lg-0 mr-lg-2">
                   <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Search for...">
+                    <input class="form-control" type="text" placeholder="Buscar por ...">
                     <span class="input-group-btn">
                       <button class="btn btn-primary" type="button">
                         <i class="fa fa-search"></i>
@@ -227,7 +227,7 @@ include 'config.php';
               </li>
               <li class="nav-item">
                 <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-                  <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+                  <i class="fa fa-fw fa-sign-out"></i>Sair</a>
                 </li>
               </ul>
             </div>
